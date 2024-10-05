@@ -1,95 +1,93 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import LoginPage from '@/components/auth/login';
+
 
 export default function Home() {
+
+  // useEffect(() => {
+  //   if (token) {
+  //     newSocket.current = io('https://api.tkteats.com', {
+  //       auth: {
+  //         token,
+  //         AppName: 'vite-react',
+  //       }
+  //     })
+  //   }
+  // }, [token]);
+
+  // useEffect(() => {
+  //   if (token) {
+  //     axios.get('https://api.tkteats.com/api/v1/messages/own-rooms', {
+  //       headers: {
+  //         'Authorization': `Bearer ${token}`,
+  //         'Content-Type': 'application/json'
+  //       }
+  //     }).then(response => {
+  //       console.log({ roomList: response.data });
+  //     })
+  //   }
+
+  //   // axios.get('https://api.tkteats.com/api/v1/messages', )
+
+  // }, [token])
+
+  // console.log({ newSocket: newSocket.current });
+  // const disconnect = () => {
+  //   newSocket.current.disconnect()
+  //   console.log('after disconnect=>', newSocket.current);
+  // }
+
+  // newSocket.current?.on('new-message', (data) => {
+  //   console.log('new message', data);
+  // })
+
+  // const sendMessage = async () => {
+  //   const payload = { receiverId, content: message };
+  //   const data = await axios.post('https://api.tkteats.com/api/v1/messages/send', payload, {
+  //     headers: {
+  //       'Authorization': `Bearer ${token}`,
+  //       'Content-Type': 'application/json'
+  //     }
+  //   });
+  //   console.log({ data });
+  // }
+
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    // <div>
+    //   {/* <button
+    //     onClick={() => newSocket?.current?.active ? disconnect() : newSocket.connect()}
+    //   >
+    //     {newSocket.current.active ? 'Connected' : 'Disconnected'}
+    //   </button> */}
+    //   <button
+    //     onClick={() => console.log(newSocket.current?.connected)}
+    //   >
+    //     click here
+    //   </button>
+    //   <div>
+    //     <label htmlFor="token">Token: </label>
+    //     <input type="text" name='token' id='message' onChange={(e) => setToken(e.target.value)} required />
+    //     <br />
+    //     <label htmlFor="roomId">room id</label>
+    //     <input type="text" name="roomId" id="roomId" onChange={(e) => setRoomId(e.target.value)} required />
+    //     <button onClick={() => newSocket.current?.emit('joinRoom', roomId)}>
+    //       join room
+    //     </button>
+    //     <br />
+    //     <label htmlFor="receiverId">receiver uid: </label>
+    //     <input type="text" name="receiverId" id="receiverId" onChange={(e) => setReceiverId(e.target.value)} required />
+    //     <br />
+    //     <label htmlFor="message">message: </label>
+    //     <input type="text" name="message" id="message" onChange={(e) => setMessage(e.target.value)} required />
+    //   </div>
+    //   <button
+    //     onClick={() => sendMessage()}
+    //   >
+    //     send message
+    //   </button>
+    // </div>
+    <div>
+      <LoginPage />
+    </div>
   );
 }
