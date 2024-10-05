@@ -85,16 +85,6 @@ export default function ChatHistory({ chatId = 'default', chatName = 'Unknown', 
 
   const handleSendMessage = async () => {
     if (newMessage.trim()) {
-      const message: Message = {
-        id: Date.now().toString(),
-        content: newMessage,
-        senderId: myUid,
-        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-      }
-      // setMessages([...messages, message])
-      // setNewMessage("")
-      // console.log({ message });
-
       try {
         const payload = { receiverId, content: newMessage };
         const response = await axios.post('https://api.tkteats.com/api/v1/messages/send', payload, {
@@ -118,6 +108,7 @@ export default function ChatHistory({ chatId = 'default', chatName = 'Unknown', 
         console.log(error);
       }
     }
+    setNewMessage("")
   }
 
 

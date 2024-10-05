@@ -103,6 +103,9 @@ export default function HomePage() {
                 </div>
                 <ScrollArea className="flex-grow h-[calc(100vh-240px)]">
                     <div className="space-y-6 pr-4">
+                        {
+                            filteredChats.length === 0 && <> No contact's found.</>
+                        }
                         {filteredChats.map((chat) => (
                             <div key={chat.id} className="flex items-center space-x-6 cursor-pointer hover:bg-muted p-4 rounded-lg transition-colors duration-200"
                                 onClick={() => window.location.href = `/chat/${chat.id}`}
