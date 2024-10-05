@@ -120,7 +120,7 @@ export default function ChatHistory({ chatId = 'default', chatName = 'Unknown', 
     const message: Message = {
       id: data._id,
       content: data.content,
-      senderId: myUid,
+      senderId: data.senderId,
       timestamp: new Date(data.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     }
     setMessages([...messages, message])
