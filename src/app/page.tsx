@@ -1,4 +1,5 @@
 import LoginPage from '@/components/auth/login';
+import TestPart from './testComponent';
 
 
 export default function Home() {
@@ -88,6 +89,7 @@ export default function Home() {
     // </div>
     <div>
       <LoginPage />
+      <TestPart />
     </div>
   );
 }
